@@ -1,0 +1,70 @@
+<form [formGroup]="userProfile">
+  <div class="id">
+    <label for="id">id</label>
+    <input
+      type="text"
+      formControlName="id"
+      name="id"
+      id="id"
+      autocomplete="on"
+    />
+  </div>
+  <br /><br />
+  <div class="name">
+    <label for="name">name</label>
+    <input
+      type="text"
+      formControlName="name"
+      name="name"
+      id="name"
+      autocomplete="on"
+    />
+  </div>
+  <br /><br />
+  <div class="username">
+    <label for="username">username</label>
+    <input
+      type="text"
+      formControlName="username"
+      name="username"
+      id="username"
+      autocomplete="on"
+    />
+  </div>
+  <br /><br />
+  <div class="id">
+    <label for="email">email</label>
+    <input
+      type="email"
+      formControlName="email"
+      name="email"
+      id="email"
+      autocomplete="on"
+    />
+  </div>
+  <div class="btn">
+    <button (click)="onsave()" type="submit">Save user</button>
+  </div>
+  <br />
+  <br />
+</form>
+
+<table>
+  <thead>
+    <th>sr No</th>
+    <th>name</th>
+    <th>username</th>
+    <th>email</th>
+  </thead>
+  <tbody>
+    @for (item of allUser; track $index) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.username }}</td>
+      <td>{{ item.email }}</td>
+      <button (click)="onEdit(item.id)">Edit</button>
+    </tr>
+    }
+  </tbody>
+</table>
